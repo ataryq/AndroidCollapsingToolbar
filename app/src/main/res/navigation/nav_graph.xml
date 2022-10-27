@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.cds.buildings.BuildingsListFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/building_list_fragment">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment"
+            app:enterAnim="@anim/move_in_left"
+            app:exitAnim="@anim/move_out_left"
+            app:popEnterAnim="@anim/move_in_right"
+            app:popExitAnim="@anim/move_out_right" />
+        <argument
+            android:name="idBuilding"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_FirstFragment_to_AddFragment"
+            app:destination="@id/AddFragment"
+            app:enterAnim="@anim/move_in_left"
+            app:exitAnim="@anim/move_out_left"
+            app:popEnterAnim="@anim/move_in_right"
+            app:popExitAnim="@anim/move_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.cds.detailedScreen.DetailedBuildingFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/detailed_building_fragment"/>
+
+    <fragment
+        android:id="@+id/AddFragment"
+        android:name="com.example.cds.detailedScreen.BuildingAddFragment"
+        android:label="@string/second_fragment_label"
+
+        tools:layout="@layout/detailed_building_fragment"/>
+
+</navigation>
